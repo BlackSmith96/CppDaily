@@ -8,7 +8,7 @@ class BTreeNode{
 private:
     KEY * keys;        //An array of keys
     VALUE * values;    //An array of values
-    BTreeNode ** childpr;    //An array of child pointers
+    BTreeNode<KEY, VALUE> ** childptr;    //An array of child pointers
     int t;    //The minimum degree
     int n;    //Current number of keys
     bool leaf;    //Whether this node is leaf
