@@ -23,9 +23,18 @@ public:
     // A function to search a key in the subtree rooted with this node.
     BTreeNode *search(KEY k);   // returns NULL if k is not present.
 
+    // A utility function to insert a new key in the subtree rooted with
+    // this node. The assumption is, the node must be non-full when this
+    // function is called
+    void insertNonFull(KEY k, VALUE v);
+
+    // A utility function to split the child y of this node. i is index of y in
+    // child array childptr[].  The Child y must be full when this function is called
+    void splitChild(int i, BTreeNode<KEY, VALUE> *y);
+
     // Make the BTree friend of this so that we can access private members of this
     // class in BTree functions
-    friend class BTree;
+    friend class BTree<KEY, VALUE>;
 };
 
 template <typename KEY, typename VALUE>
@@ -43,6 +52,10 @@ public:
 
     // Search a specific node of the tree
     BTreeNode * search(KEY k);
+
+    // The main function that inserts a new key in this B-Tree
+    void insert(KEY k, VALUE v);
+
 };
 
 #endif
