@@ -55,3 +55,29 @@ BTreeNode* BTreeNode::search(KEY k) {
 
     return childptr[i]->search(k);
 }
+
+// Initialize tree as empty
+template <typename KEY, typename VALUE>
+BTree::BTree(int _t) {
+    t = _t;
+    root = nullptr;
+}
+
+// deconstructor of BTree
+template <typename KEY, typename VALUE>
+BTree::~BTree() {
+    //haven't consider well
+}
+
+// function to traverse all nodes in this tree
+template <typename KEY, typename VALUE>
+void BTree::traverse() {
+    if(root != nullptr)
+        root->traverse();
+}
+
+// function to search key k in this tree
+template <typename KEY, typename VALUE>
+BTreeNode* BTree::search(KEY k) {
+    return (root == nullptr)? nullptr : root->search(k);
+}

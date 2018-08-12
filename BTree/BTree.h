@@ -31,7 +31,7 @@ public:
 template <typename KEY, typename VALUE>
 class BTree{
 private:
-    BTreeNode<KEY, VALUE> * root;    // Pointer to the root node
+    BTreeNode<KEY, VALUE>  * root;    // Pointer to the root node
     int t;    // The minimum degree of the tree
 public:
     BTree(int _t);    // Constructor
