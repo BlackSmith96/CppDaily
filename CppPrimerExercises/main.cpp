@@ -5,10 +5,15 @@
 using namespace std;
 
 int main() {
-    list<int> l{1,2,3,4};
-    vector<int> v{1,2,3,5};
-    vector<int> t;
-    t.assign(l.begin(),l.end());
-    cout << (v == t?"true":"false") << endl;
+    vector<string> lst;
+    string word;
+    auto iter = lst.begin();
+    for(int i=0;i < 4;++i){
+        cin >> word;
+        lst.insert(iter, word);
+    }
+    cout << "zzz" << endl;
+    for(auto s:lst)
+        cout << s << endl;
     return 0;
 }
